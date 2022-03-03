@@ -26,6 +26,24 @@ void	clean_btree(t_btree *btree)
 	free_btree(btree);
 }
 
-//void	free_stack()
-//{
-//};
+void	free_stack(t_stack *stack)
+{
+	free(stack);
+	stack = NULL;
+};
+
+void	clean_stack(t_stack *stack)
+{
+	t_stack		*delete;
+	t_stack		*stack_tail;
+
+	stack_tail = stack->next;
+	while (stack != stack_tail)
+	{
+		delete = stack;
+		stack->prev->next = stack->next;
+		stack = stack->prev;
+		free_stack(delete);
+	}
+	free_stack(stack);
+}
