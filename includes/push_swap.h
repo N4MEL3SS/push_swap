@@ -2,8 +2,16 @@
 # define PUSH_SWAP_H
 
 #include <stdlib.h>
+#include <unistd.h>
+
+//TODO: Удалить
+#include <stdio.h>
 
 #include "../includes/stack.h"
+#include "../includes/error_msg.h"
+
+#define ERROR 1
+#define OK 0
 
 #define SA 10
 #define SB 11
@@ -30,6 +38,13 @@ t_btree	*btree_init(int num, int index);
 t_btree	*btree_create(int *arr, int index, int size, t_btree *parent);
 
 void	clean_btree(t_btree *btree);
-void	clean_stack(t_stack *stack);
+
+void	check_str(char *str, int *num_count);
+void	check_duplicate(long *num_arr, int size);
+
+t_stack	*parser(int count, char **value);
+
+char	*ft_atoi(char *str, long *num);
+void	terminate(const char *str);
 
 #endif //PUSH_SWAP_H

@@ -1,24 +1,40 @@
-#include "../includes/stack.h"
+#include "../includes/push_swap.h"
 
-t_stack	*stack_init(int num)
+t_stack_val	*lst_create(int num)
 {
-	t_stack	*stack;
+	t_stack_val		*lst;
 
-	stack = malloc(sizeof(t_stack));
-	stack->value = num;
-	stack->prev = NULL;
-	stack->next = NULL;
-	return (stack);
+	lst = malloc(sizeof(t_stack_val));
+	if (!lst)
+		terminate(ERROR_MALLOC);
+	lst->num = num;
+	lst->index = -1;
+	lst->save_stack = NO;
+	lst->prev = NULL;
+	lst->next = NULL;
+	return (lst);
 }
 
-t_stack	*stack_create(int num, t_stack *prev)
+void	lst_add(t_stack *stack, t_stack_val *lst)
 {
-	t_stack	*stack;
+	t_stack_val	*tail;
 
-	stack = malloc(sizeof(t_stack));
-	stack->value = num;
-	stack->prev = prev;
-	stack->next = NULL;
-	stack->prev->next = stack;
-	return (stack);
+	if (stack && lst)
+	{
+		if (!stack->head)
+		{
+			stack->head = lst;
+			stack->head->prev = stack->head;
+			stack->head->next = stack->head;
+		}
+		else
+		{
+			tail = stack->head->prev;
+			lst->prev = tail;
+			tail->next = lst;
+			lst->next = stack->head;
+			stack->head->prev = lst;
+		}
+		stack->size++;
+	}
 }
