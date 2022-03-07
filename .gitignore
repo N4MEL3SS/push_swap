@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ### VisualStudioCode template
 .vscode/*
 !.vscode/settings.json
@@ -9,6 +10,8 @@
 # Local History for Visual Studio Code
 .history/
 
+=======
+>>>>>>> baed55f522887b68eb15bb36ef40787087336dcb
 ### C template
 # Prerequisites
 *.d
@@ -379,6 +382,7 @@ dmypy.json
 # Cython debug symbols
 cython_debug/
 
+<<<<<<< HEAD
 ### Vagrant template
 # General
 .vagrant/
@@ -386,3 +390,5 @@ cython_debug/
 # Log files (if you are creating logs in debug mode, uncomment this)
 # *.log
 
+=======
+>>>>>>> baed55f522887b68eb15bb36ef40787087336dcb
