@@ -4,6 +4,10 @@ int	main(int argc, char *argv[])
 {
 	t_stack		*stack_index;
 
-	stack_index = parser(argc, ++argv);
+	if (argc > 1)
+	{
+		stack_index = parser(--argc, ++argv);
+		free_stack(stack_index);
+	}
 	return (0);
 }

@@ -34,17 +34,22 @@ typedef struct	s_btree
 	struct s_btree	*right;
 }				t_btree;
 
+/* btree.c */
 t_btree	*btree_init(int num, int index);
 t_btree	*btree_create(int *arr, int index, int size, t_btree *parent);
 
+/* free.c */
 void	clean_btree(t_btree *btree);
 
-void	check_str(char *str, int *num_count);
-void	check_duplicate(long *num_arr, int size);
+/* validator.c */
+int		check_str(char *str, long *num_arr);
+void	check_dup_and_over(long *num_arr, int size);
 
+/* parser.c */
 t_stack	*parser(int count, char **value);
 
+/* utils.c */
 char	*ft_atoi(char *str, long *num);
-void	terminate(const char *str);
+void	terminate(const char *str, void *address);
 
 #endif //PUSH_SWAP_H

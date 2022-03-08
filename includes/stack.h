@@ -21,7 +21,12 @@ typedef struct	s_stack
 	t_stack_val		*marker;
 }				t_stack;
 
-t_stack_val		*lst_create(int num);
+/* stack.c */
+t_stack			*stack_create(void);
+t_stack_val		*lst_create(int num, t_stack *stack);
 void			lst_add(t_stack *stack, t_stack_val *lst);
+
+/* free.c */
+void			free_stack(t_stack *stack);
 
 #endif //STACK_H

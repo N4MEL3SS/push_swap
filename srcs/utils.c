@@ -9,15 +9,15 @@ char	*ft_atoi(char *str, long *num)
 	sign = 1;
 	while (*str == '\t' || *str == '\n' || *str == '\v'
 		|| *str == '\f' || *str == '\r' || *str == ' ')
-		++str;
+		str++;
 	if (*str == '-' && ++str)
 		sign = -1;
 	else if (*str == '+')
-		++str;
+		str++;
 	while ('0' <= *str && *str <= '9')
 	{
 		result = result * 10L + (long)*str - 48L;
-		++str;
+		str++;
 	}
 	if (result > 9223372036854775807 && sign == 1)
 		*num = -1;
@@ -32,13 +32,14 @@ size_t	ft_strlen(const char *str)
 	size_t	len;
 
 	len = 0;
-	while (str[len])
-		len++;
+	while (*str && ++len)
+		str++;
 	return (len);
 }
 
-void	terminate(const char *str)
+void	terminate(const char *str, void *address)
 {
+	free(address);
 	write(2, str, ft_strlen(str));
 	write(2, "\n", 1);
 	exit(1);
