@@ -48,6 +48,8 @@ void	check_dup_and_over(long *num_arr, int size);
 /* parser.c */
 t_stack	*parser(int count, char **value);
 
+void	index_stack(t_stack *stack);
+
 /* utils.c */
 char	*ft_atoi(char *str, long *num);
 void	terminate(const char *str, void *address);

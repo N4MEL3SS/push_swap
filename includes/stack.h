@@ -15,8 +15,8 @@ typedef struct		s_stack_val
 
 typedef struct	s_stack
 {
-	size_t			size;
-	size_t			pairs;
+	int				size;
+	int				pairs;
 	t_stack_val		*head;
 	t_stack_val		*marker;
 }				t_stack;

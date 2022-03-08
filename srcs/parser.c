@@ -1,6 +1,5 @@
 #include "../includes/push_swap.h"
 
-
 long	*parse_str(char *str, int *size)
 {
 	long	*num_arr;
@@ -27,7 +26,7 @@ long	*parse_arr(int count, char **value, int *size)
 	while (++i < count)
 	{
 		if (check_str(*value, num_arr) > 1)
-			terminate(ERROR_MANY, num_arr);
+			terminate(ERROR_MANY_ARGS, num_arr);
 		ft_atoi(*value, &num_arr[i]);
 		value++;
 	}
