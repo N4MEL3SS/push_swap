@@ -47,9 +47,9 @@ t_stack	*parser(int count, char **value)
 		num_arr = parse_str(*value, &size);
 	else
 		num_arr = parse_arr(count, value, &size);
-	stack = stack_create();
+	stack = init_stack();
 	while (++i < size)
-		lst_add(stack, lst_create((int)num_arr[i], stack));
+		lst_add(stack, init_lst((int)num_arr[i], stack));
 	free(num_arr);
 	return (stack);
 }

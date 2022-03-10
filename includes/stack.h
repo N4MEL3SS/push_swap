@@ -8,7 +8,7 @@ typedef struct		s_stack_val
 {
 	int					num;
 	int					index;
-	int					save_stack;
+	int					save_in_stack_a;
 	struct s_stack_val	*prev;
 	struct s_stack_val	*next;
 }					t_stack_val;
@@ -21,9 +21,11 @@ typedef struct	s_stack
 	t_stack_val		*marker;
 }				t_stack;
 
+/* init.c */
+t_stack			*init_stack(void);
+t_stack_val		*init_lst(int num, t_stack *stack);
+
 /* stack.c */
-t_stack			*stack_create(void);
-t_stack_val		*lst_create(int num, t_stack *stack);
 void			lst_add(t_stack *stack, t_stack_val *lst);
 
 /* free.c */

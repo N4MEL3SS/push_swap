@@ -2,44 +2,18 @@
 # define PUSH_SWAP_H
 
 #include <stdlib.h>
-#include <unistd.h>
 
 //TODO: Удалить
 #include <stdio.h>
 
 #include "../includes/stack.h"
 #include "../includes/error_msg.h"
+#include "../includes/commands.h"
 
-#define ERROR 1
-#define OK 0
+#include "../includes/btree.h"
 
-#define SA 10
-#define SB 11
-#define SS 12
-#define PA 20
-#define PB 21
-#define RA 30
-#define RB 31
-#define RR 32
-#define RRA 40
-#define RRB 41
-#define RRR 42
-
-typedef struct	s_btree
-{
-	int				value;
-	int				index;
-	struct s_btree	*parent;
-	struct s_btree	*left;
-	struct s_btree	*right;
-}				t_btree;
-
-/* btree.c */
-t_btree	*btree_init(int num, int index);
-t_btree	*btree_create(int *arr, int index, int size, t_btree *parent);
-
-/* free.c */
-void	clean_btree(t_btree *btree);
+#define TRUE 1
+#define FALSE 0
 
 /* validator.c */
 int		check_str(char *str, long *num_arr);
@@ -48,10 +22,23 @@ void	check_dup_and_over(long *num_arr, int size);
 /* parser.c */
 t_stack	*parser(int count, char **value);
 
+/* index.c */
 void	index_stack(t_stack *stack);
+
+/* markup.c */
+void	markup_stack(t_stack *stack, int (*markup)(t_stack_val *));
+int		markup_index(t_stack_val *markup_head);
+int		markup_gt(t_stack_val *markup_head);
 
 /* utils.c */
 char	*ft_atoi(char *str, long *num);
 void	terminate(const char *str, void *address);
+
+void	swap(t_stack *stack_a, t_stack_val *head);
+
+t_stack_val	*pop(t_stack *stack);
+void	push(t_stack *stack, t_stack_val *val);
+
+void	rotate(t_stack *stack);
 
 #endif //PUSH_SWAP_H
