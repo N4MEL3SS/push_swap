@@ -1,4 +1,4 @@
-#include "../includes/push_swap.h"
+#include "push_swap.h"
 
 int	check_str(char *str, long *num_arr)
 {

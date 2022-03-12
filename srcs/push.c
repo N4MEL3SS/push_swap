@@ -1,4 +1,4 @@
-#include "../includes/push_swap.h"
+#include "push_swap.h"
 
 void	push(t_stack *stack, t_stack_val *val)
 {
@@ -45,4 +45,16 @@ t_stack_val	*pop(t_stack *stack)
 	}
 	stack->size--;
 	return (val);
+}
+
+void	pa(t_stack *stack_a, t_stack *stack_b, t_cmds_head *cmds_head)
+{
+	push(stack_a, pop(stack_b));
+	add_commands(cmds_head, init_cmds_lst(PA));
+}
+
+void	pb(t_stack *stack_a, t_stack *stack_b, t_cmds_head *cmds_head)
+{
+	push(stack_b, pop(stack_a));
+	add_commands(cmds_head, init_cmds_lst(PB));
 }

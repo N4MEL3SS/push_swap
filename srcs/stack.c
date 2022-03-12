@@ -1,4 +1,4 @@
-#include "../includes/push_swap.h"
+#include "push_swap.h"
 
 void	lst_add(t_stack *stack, t_stack_val *lst)
 {

@@ -1,4 +1,4 @@
-#include "../includes/push_swap.h"
+#include "push_swap.h"
 
 t_btree	*btree_init(int num, int index)
 {

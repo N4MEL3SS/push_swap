@@ -1,4 +1,4 @@
-#include "../includes/push_swap.h"
+#include "push_swap.h"
 
 void	swap(t_stack *stack_a, t_stack_val *head)
 {
@@ -19,4 +19,17 @@ void	sa(t_stack *stack_a, t_cmds_head *cmds_head)
 {
 	swap(stack_a, stack_a->head);
 	add_commands(cmds_head, init_cmds_lst(SA));
+}
+
+void	sb(t_stack *stack_b, t_cmds_head *cmds_head)
+{
+	swap(stack_b, stack_b->head);
+	add_commands(cmds_head, init_cmds_lst(SB));
+}
+
+void	ss(t_stack *stack_a, t_stack *stack_b, t_cmds_head *cmds_head)
+{
+	sa(stack_a, cmds_head);
+	sb(stack_b, cmds_head);
+	add_commands(cmds_head, init_cmds_lst(SS));
 }

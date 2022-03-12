@@ -4,16 +4,16 @@
 #define YES 1
 #define NO 0
 
-typedef struct		s_stack_val
+typedef struct s_stack_val
 {
 	int					num;
 	int					index;
 	int					save_in_stack_a;
 	struct s_stack_val	*prev;
 	struct s_stack_val	*next;
-}					t_stack_val;
+}				t_stack_val;
 
-typedef struct	s_stack
+typedef struct s_stack
 {
 	int				size;
 	int				pairs;

@@ -1,4 +1,4 @@
-#include "../includes/push_swap.h"
+#include "push_swap.h"
 
 t_stack	*init_stack(void)
 {
@@ -41,6 +41,7 @@ t_cmds_head	*init_cmds(void)
 		terminate(ERROR_MALLOC, cmds);
 	cmds->size = 0;
 	cmds->head = NULL;
+	cmds->tail = NULL;
 	return (cmds);
 }
 
@@ -54,4 +55,20 @@ t_cmds_lst	*init_cmds_lst(int cmds_name)
 	lst->command = cmds_name;
 	lst->next = NULL;
 	return (lst);
+}
+
+t_shift	*init_shift_info(void)
+{
+	t_shift		*shift_info;
+
+	shift_info = malloc(sizeof(t_shift));
+	if (!shift_info)
+		terminate(ERROR_MALLOC, shift_info);
+	shift_info->stack_a_shift = NULL;
+	shift_info->stack_b_shift = NULL;
+	shift_info->direction_a = ROTATE;
+	shift_info->direction_b = REVERSE_ROTATE;
+	shift_info->size = 0;
+	shift_info->state = FALSE;
+	return (shift_info);
 }

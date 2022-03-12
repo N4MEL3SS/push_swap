@@ -1,4 +1,4 @@
-#include "../includes/push_swap.h"
+#include "push_swap.h"
 
 void	free_btree(t_btree *btree)
 {
@@ -40,4 +40,19 @@ void	free_stack(t_stack *stack)
 		free(delete);
 	}
 	free(stack);
+}
+
+void	free_command_list(t_cmds_head *cmds_head)
+{
+	t_cmds_lst	*current;
+	t_cmds_lst	*delete;
+
+	current = cmds_head->head;
+	while (current)
+	{
+		delete = current;
+		current = current->next;
+		free(delete);
+	}
+	free(cmds_head);
 }

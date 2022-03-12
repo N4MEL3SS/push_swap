@@ -1,4 +1,4 @@
-#include "../includes/push_swap.h"
+#include "push_swap.h"
 
 int	needs_push_b(t_stack *stack_a)
 {
@@ -36,19 +36,12 @@ void	commands_a(t_stack *stack_a, t_stack *stack_b, t_cmds_head *cmds_head,
 	{
 		if (needs_swap_a(stack_a, markup))
 		{
-			swap(stack_a, stack_a->head);
-			add_commands(cmds_head, init_cmds_lst(SA));
+			sa(stack_a, cmds_head);
 			stack_a->pairs = markup(stack_a->marker);
 		}
 		else if (stack_a->head->save_in_stack_a == NO)
-		{
-			push(stack_b, pop(stack_a));
-			add_commands(cmds_head, init_cmds_lst(PB));
-		}
+			pb(stack_a, stack_b, cmds_head);
 		else
-		{
-			rotate(stack_a);
-			add_commands(cmds_head, init_cmds_lst(RA));
-		}
+			ra(stack_a, cmds_head);
 	}
 }

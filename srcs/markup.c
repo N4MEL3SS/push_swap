@@ -1,4 +1,4 @@
-#include "../includes/push_swap.h"
+#include "push_swap.h"
 
 int	markup_index(t_stack_val *markup_head)
 {

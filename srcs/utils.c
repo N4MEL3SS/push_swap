@@ -1,4 +1,4 @@
-#include "../includes/push_swap.h"
+#include "push_swap.h"
 
 char	*ft_atoi(char *str, long *num)
 {
@@ -25,6 +25,14 @@ char	*ft_atoi(char *str, long *num)
 		*num = 0;
 	*num = result * sign;
 	return (str);
+}
+
+int		ft_max(int a, int b)
+{
+	if (a > b)
+		return (a);
+	else
+		return (b);
 }
 
 size_t	ft_strlen(const char *str)
