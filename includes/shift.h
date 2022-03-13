@@ -1,10 +1,22 @@
-#ifndef PUSH_SWAP_SHIFT_H
-# define PUSH_SWAP_SHIFT_H
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   shift.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: celadia <celadia@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/13 12:34:35 by celadia           #+#    #+#             */
+/*   Updated: 2022/03/13 12:35:54 by celadia          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include "stack.h"
+#ifndef SHIFT_H
+# define SHIFT_H
 
-#define ROTATE 1
-#define REVERSE_ROTATE 2
+# include "stack.h"
+
+# define ROTATE 1
+# define REVERSE_ROTATE 2
 
 typedef struct s_shift
 {
@@ -16,6 +28,7 @@ typedef struct s_shift
 	int				state;
 }				t_shift;
 
+/* init.c */
 t_shift	*init_shift_info(void);
 
-#endif //PUSH_SWAP_SHIFT_H
+#endif //SHIFT_H

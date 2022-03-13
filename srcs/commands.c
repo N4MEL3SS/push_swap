@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   commands.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: celadia <celadia@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/13 12:37:12 by celadia           #+#    #+#             */
+/*   Updated: 2022/03/13 12:40:14 by celadia          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-void		align_a(t_stack *stack_a, t_cmds_head *cmds_head)
+void	align_a(t_stack *stack_a, t_cmds_head *cmds_head)
 {
 	t_stack_val		*current;
-	int 			ra_size;
-	int 			rra_size;
+	int				ra_size;
+	int				rra_size;
 
 	if (stack_a && stack_a->head)
 	{
@@ -14,7 +26,7 @@ void		align_a(t_stack *stack_a, t_cmds_head *cmds_head)
 			current = current->next;
 		rra_size = 0;
 		current = stack_a->head;
-		while (current->index != 0  && ++rra_size)
+		while (current->index != 0 && ++rra_size)
 			current = current->prev;
 		while (stack_a->head->index != 0 && ra_size < rra_size)
 			ra(stack_a, cmds_head);

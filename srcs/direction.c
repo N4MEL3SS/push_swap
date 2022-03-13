@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   direction.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: celadia <celadia@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/13 12:34:30 by celadia           #+#    #+#             */
+/*   Updated: 2022/03/13 12:34:30 by celadia          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 t_stack_val	*find_a_elem(t_stack *stack_a, int index)
@@ -22,7 +34,7 @@ t_stack_val	*find_a_elem(t_stack *stack_a, int index)
 	return (current);
 }
 
-void			estimate_direction(t_stack *stack, int index, int *rx_size,
+void	estimate_direction(t_stack *stack, int index, int *rx_size,
 		int *rrx_size)
 {
 	t_stack_val		*current;
@@ -67,9 +79,9 @@ void	optimal_direct(t_stack *stack_a, t_stack *stack_b,
 	shift_info_new.stack_a_shift = find_a_elem(stack_a, b_val->index);
 	shift_info_new.stack_b_shift = b_val;
 	estimate_direction(stack_a, shift_info_new.stack_a_shift->index,
-					   &ra_size, &rra_size);
+		&ra_size, &rra_size);
 	estimate_direction(stack_b, b_val->index,
-					   &rb_size, &rrb_size);
+		&rb_size, &rrb_size);
 	shift_info_new.direction_a = ROTATE;
 	shift_info_new.direction_b = ROTATE;
 	set_direction(ft_max(ra_size, rb_size), shift_info_new, shift_info);

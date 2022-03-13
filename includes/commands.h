@@ -1,17 +1,29 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   commands.h                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: celadia <celadia@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/13 12:35:17 by celadia           #+#    #+#             */
+/*   Updated: 2022/03/13 12:35:17 by celadia          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef COMMANDS_H
 # define COMMANDS_H
 
-#define SA 6583
-#define SB 6683
-#define SS 8383
-#define PA 6580
-#define PB 6680
-#define RA 6582
-#define RB 6582
-#define RR 8282
-#define RRA 658282
-#define RRB 668282
-#define RRR 828282
+# define SA 6583
+# define SB 6683
+# define SS 8383
+# define PA 6580
+# define PB 6680
+# define RA 6582
+# define RB 6582
+# define RR 8282
+# define RRA 658282
+# define RRB 668282
+# define RRR 828282
 
 typedef struct s_cmds_lst
 {
@@ -34,7 +46,12 @@ t_cmds_lst		*init_cmds_lst(int cmds_name);
 void			add_commands(t_cmds_head *cmds_head, t_cmds_lst *lst);
 t_cmds_head		*commands(t_stack *stack_a, int (*markup)(t_stack_val *));
 
+/* commands_stack_a.c */
 void			commands_a(t_stack *stack_a, t_stack *stack_b,
 					t_cmds_head *cmds_head, int (*markup)(t_stack_val *));
-void	commands_b(t_stack *stack_a, t_stack *stack_b, t_cmds_head *cmds_head);
+
+/* commands_stack_b.c */
+void			commands_b(t_stack *stack_a, t_stack *stack_b,
+					t_cmds_head *cmds_head);
+
 #endif //COMMANDS_H

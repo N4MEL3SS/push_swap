@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: celadia <celadia@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/13 12:39:39 by celadia           #+#    #+#             */
+/*   Updated: 2022/03/13 12:39:39 by celadia          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 char	*ft_atoi(char *str, long *num)
@@ -27,7 +39,7 @@ char	*ft_atoi(char *str, long *num)
 	return (str);
 }
 
-int		ft_max(int a, int b)
+int	ft_max(int a, int b)
 {
 	if (a > b)
 		return (a);
