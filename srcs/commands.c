@@ -6,7 +6,7 @@
 /*   By: celadia <celadia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 12:37:12 by celadia           #+#    #+#             */
-/*   Updated: 2022/03/13 12:56:20 by celadia          ###   ########.fr       */
+/*   Updated: 2022/03/13 16:09:29 by celadia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,18 @@ void	align_a(t_stack *stack_a, t_cmds_head *cmds_head)
 	{
 		ra_size = 0;
 		current = stack_a->head;
-		while (current->index != 0 && ++ra_size)
+		while (current->index != 0)
+		{
+			ra_size++;
 			current = current->next;
+		}
 		rra_size = 0;
 		current = stack_a->head;
-		while (current->index != 0 && ++rra_size)
+		while (current->index != 0)
+		{
+			rra_size++;
 			current = current->prev;
+		}
 		while (stack_a->head->index != 0 && ra_size < rra_size)
 			ra(stack_a, cmds_head);
 		while (stack_a->head->index != 0 && ra_size >= rra_size)
