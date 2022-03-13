@@ -6,11 +6,11 @@
 /*   By: celadia <celadia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 12:39:07 by celadia           #+#    #+#             */
-/*   Updated: 2022/03/13 12:39:07 by celadia          ###   ########.fr       */
+/*   Updated: 2022/03/13 12:40:14 by celadia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 void	reverse_rotate(t_stack *stack)
 {

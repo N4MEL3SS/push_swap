@@ -6,11 +6,11 @@
 /*   By: celadia <celadia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 12:37:35 by celadia           #+#    #+#             */
-/*   Updated: 2022/03/13 12:40:14 by celadia          ###   ########.fr       */
+/*   Updated: 2022/03/13 12:48:40 by celadia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 void	move_b_rotate_twin(t_stack *stack_a, t_stack *stack_b,
 		t_shift *shift_info, t_cmds_head *cmds_head)
@@ -21,7 +21,7 @@ void	move_b_rotate_twin(t_stack *stack_a, t_stack *stack_b,
 		rrr(stack_a, stack_b, cmds_head);
 }
 
-void	move_b_rotate_a(t_stack *stack_a, t_stack *stack_b, t_shift *shift_info,
+void	move_b_rotate_a(t_stack *stack_a, t_shift *shift_info,
 		t_cmds_head *cmds_head)
 {
 	if (shift_info->direction_a == ROTATE)
@@ -30,7 +30,7 @@ void	move_b_rotate_a(t_stack *stack_a, t_stack *stack_b, t_shift *shift_info,
 		rra(stack_a, cmds_head);
 }
 
-void	move_b_rotate_b(t_stack *stack_a, t_stack *stack_b, t_shift *shift_info,
+void	move_b_rotate_b(t_stack *stack_b, t_shift *shift_info,
 		t_cmds_head *cmds_head)
 {
 	if (shift_info->direction_b == ROTATE)
@@ -50,9 +50,9 @@ void	move_b(t_stack *stack_a, t_stack *stack_b, t_shift *shift_info,
 			&& shift_info->stack_b_shift != stack_b->head)
 			move_b_rotate_twin(stack_a, stack_b, shift_info, cmds_head);
 		else if (shift_info->stack_a_shift != stack_a->head)
-			move_b_rotate_a(stack_a, stack_b, shift_info, cmds_head);
+			move_b_rotate_a(stack_a, shift_info, cmds_head);
 		else if (shift_info->stack_b_shift != stack_b->head)
-			move_b_rotate_b(stack_a, stack_b, shift_info, cmds_head);
+			move_b_rotate_b(stack_b, shift_info, cmds_head);
 	}
 }
 

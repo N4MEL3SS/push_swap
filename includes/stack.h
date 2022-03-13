@@ -6,12 +6,14 @@
 /*   By: celadia <celadia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 12:34:41 by celadia           #+#    #+#             */
-/*   Updated: 2022/03/13 12:34:41 by celadia          ###   ########.fr       */
+/*   Updated: 2022/03/13 13:47:53 by celadia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STACK_H
 # define STACK_H
+
+# include "push_swap.h"
 
 # define YES 1
 # define NO 0

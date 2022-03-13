@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 t_stack_val	*find_a_elem(t_stack *stack_a, int index)
 {
@@ -50,7 +50,7 @@ void	estimate_direction(t_stack *stack, int index, int *rx_size,
 	}
 }
 
-void	set_direction(size_t size, t_shift shift_info_new, t_shift *shift_info)
+void	set_direction(int size, t_shift shift_info_new, t_shift *shift_info)
 {
 	if (!shift_info->state || size < shift_info->size)
 	{

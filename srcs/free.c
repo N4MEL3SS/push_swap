@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 void	free_btree(t_btree *btree)
 {
@@ -41,7 +41,7 @@ void	free_stack(t_stack *stack)
 {
 	t_stack_val		*current;
 	t_stack_val		*delete;
-	size_t			i;
+	int				i;
 
 	i = -1;
 	current = stack->head;

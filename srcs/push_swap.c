@@ -6,11 +6,11 @@
 /*   By: celadia <celadia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 12:34:19 by celadia           #+#    #+#             */
-/*   Updated: 2022/03/13 12:34:19 by celadia          ###   ########.fr       */
+/*   Updated: 2022/03/13 12:50:50 by celadia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 void	print(t_cmds_head *commands_index, t_cmds_head *commands_gt)
 {

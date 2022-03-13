@@ -14,6 +14,7 @@
 # define ERROR_MSG_H
 
 # include <unistd.h>
+# include "push_swap.h"
 
 # define ERROR_DUPLICATE	"ERROR: Found duplicates"
 # define ERROR_MALLOC		"ERROR: Failed to allocate memory"

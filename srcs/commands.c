@@ -6,11 +6,11 @@
 /*   By: celadia <celadia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 12:37:12 by celadia           #+#    #+#             */
-/*   Updated: 2022/03/13 12:40:14 by celadia          ###   ########.fr       */
+/*   Updated: 2022/03/13 12:56:20 by celadia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 void	align_a(t_stack *stack_a, t_cmds_head *cmds_head)
 {
