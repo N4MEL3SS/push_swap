@@ -6,7 +6,7 @@
 /*   By: celadia <celadia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 12:35:17 by celadia           #+#    #+#             */
-/*   Updated: 2022/03/13 12:35:17 by celadia          ###   ########.fr       */
+/*   Updated: 2022/03/13 18:42:47 by celadia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # define PA 6580
 # define PB 6680
 # define RA 6582
-# define RB 6582
+# define RB 6682
 # define RR 8282
 # define RRA 658282
 # define RRB 668282
@@ -33,9 +33,9 @@ typedef struct s_cmds_lst
 
 typedef struct s_cmds_head
 {
-	int						size;
-	struct s_cmds_lst		*head;
-	struct s_cmds_lst		*tail;
+	int				size;
+	t_cmds_lst		*head;
+	t_cmds_lst		*tail;
 }				t_cmds_head;
 
 /* init.c */

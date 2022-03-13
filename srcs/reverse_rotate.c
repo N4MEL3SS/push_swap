@@ -31,7 +31,7 @@ void	rrb(t_stack *stack_b, t_cmds_head *cmds_head)
 
 void	rrr(t_stack *stack_a, t_stack *stack_b, t_cmds_head *cmds_head)
 {
-	rra(stack_a, cmds_head);
-	rrb(stack_b, cmds_head);
+	reverse_rotate(stack_a);
+	reverse_rotate(stack_b);
 	add_commands(cmds_head, init_cmds_lst(RRR));
 }

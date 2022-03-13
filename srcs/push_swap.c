@@ -43,7 +43,5 @@ int	main(int argc, char *argv[])
 		free_stack(stack_gt);
 		print(commands_index, commands_gt);
 	}
-	else
-		terminate(ERROR_NEED_ARGS, NULL);
 	return (0);
 }

@@ -42,6 +42,9 @@ t_stack_val		*init_lst(int num, t_stack *stack);
 /* stack.c */
 void			lst_add(t_stack *stack, t_stack_val *lst);
 
+/* push.c */
+t_stack_val		*pop(t_stack *stack);
+
 /* free.c */
 void			free_stack(t_stack *stack);
 

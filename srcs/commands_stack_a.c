@@ -6,7 +6,7 @@
 /*   By: celadia <celadia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 12:37:29 by celadia           #+#    #+#             */
-/*   Updated: 2022/03/13 16:30:50 by celadia          ###   ########.fr       */
+/*   Updated: 2022/03/13 17:37:45 by celadia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ int	needs_swap_a(t_stack *stack_a, int (*markup)(t_stack_val *))
 
 	if (stack_a && stack_a->size >= 2)
 	{
-		swap(stack_a->head);
+		swap(stack_a, stack_a->head, stack_a->head->next);
 		pairs = markup(stack_a->marker);
-		swap(stack_a->head);
+		swap(stack_a, stack_a->head, stack_a->head->next);
 		markup(stack_a->marker);
 		if (pairs > stack_a->pairs)
 			return (TRUE);

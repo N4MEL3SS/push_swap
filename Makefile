@@ -6,11 +6,12 @@
 #    By: celadia <celadia@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/13 12:57:31 by celadia           #+#    #+#              #
-#    Updated: 2022/03/13 15:24:16 by celadia          ###   ########.fr        #
+#    Updated: 2022/03/13 19:58:59 by celadia          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME_PS = push_swap
+NAME_CH = checker
 
 CC = clang
 FLAGS = -Wall -Werror -Wextra
@@ -39,21 +40,31 @@ SRCS_LIST = 	init.c	\
 	print_commands.c	\
 	utils.c
 SRCS_LIST_PS = push_swap.c
+SRCS_LIST_CH = checker.c
 SRCS = $(addprefix $(SRCS_DIR), $(SRCS_LIST))
 SRCS_PS = $(addprefix $(SRCS_DIR), $(SRCS_LIST_PS))
+SRCS_CH = $(addprefix $(SRCS_DIR), $(SRCS_LIST_CH))
 
 OBJS_DIR = ./objs/
 OBJS_DIR_NAME = objs
 OBJS_LIST = $(patsubst %.c, %.o, $(SRCS_LIST))
 OBJS_LIST_PS = $(patsubst %.c, %.o, $(SRCS_LIST_PS))
+OBJS_LIST_CH = $(patsubst %.c, %.o, $(SRCS_LIST_CH))
 OBJS = $(addprefix $(OBJS_DIR), $(OBJS_LIST))
 OBJS_PS = $(addprefix $(OBJS_DIR), $(OBJS_LIST_PS))
+OBJS_CH = $(addprefix $(OBJS_DIR), $(OBJS_LIST_CH))
 
 all: $(NAME_PS)
+
+bonus: $(NAME_CH)
 
 $(NAME_PS): $(OBJS_DIR) $(OBJS) $(OBJS_PS)
 	@$(CC) $(FLAGS) $(INCLUDES) $(OBJS) $(OBJS_PS) -o $(NAME_PS)
 	@echo "$(NAME_PS) created."
+
+$(NAME_CH): $(OBJS_DIR) $(OBJS) $(OBJS_CH)
+	@$(CC) $(FLAGS) $(INCLUDES) $(OBJS) $(OBJS_PS) -o $(NAME_CH)
+	@echo "$(NAME_CH) created."
 
 $(OBJS_DIR):
 	@mkdir  -p $(OBJS_DIR_NAME)
@@ -65,12 +76,17 @@ $(OBJS_DIR)%.o : $(SRCS_DIR)%.c $(HEADERS)
 clean:
 	@rm -rf $(OBJS)
 	@rm -rf $(OBJS_PS)
+	@rm -rf $(OBJS_CH)
 	@echo "Object files were deleted."
 
 fclean: clean
 	@rm -f $(NAME_PS)
 	@echo "$(NAME_PS) was deleted."
+	@rm -f $(NAME_CH)
+	@echo "$(NAME_CH) was deleted."
 
 re: fclean all
 
-.PHONY: all clean fclean re
+re_bonus: fclean all bonus
+
+.PHONY: all bonus clean fclean re
