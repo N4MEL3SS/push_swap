@@ -22,6 +22,8 @@ void	print_commands(t_cmds_head *cmds_head)
 		write(1, "\n", 1);
 		current = current->next;
 	}
+	//TODO: Удалить
+	write(1, "\n", 1);
 }
 
 void	print_commands_fd(t_cmds_head *cmds_head)

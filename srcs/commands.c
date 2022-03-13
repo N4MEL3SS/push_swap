@@ -46,8 +46,11 @@ t_cmds_head	*commands(t_stack *stack_a, int (*markup)(t_stack_val *))
 	stack_b = init_stack();
 	cmds_head = init_cmds();
 	commands_a(stack_a, stack_b, cmds_head, markup);
+	print_commands(cmds_head);
 	commands_b(stack_a, stack_b, cmds_head);
+	print_commands(cmds_head);
 	align_a(stack_a, cmds_head);
+	print_commands(cmds_head);
 	free_stack(stack_b);
 	return (cmds_head);
 }
