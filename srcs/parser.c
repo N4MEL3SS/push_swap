@@ -12,37 +12,51 @@
 
 #include "../includes/push_swap.h"
 
-long	*parse_str(char *str, int *size)
+int	*parse_str(char *str, int *size)
 {
-	long	*num_arr;
+	long	temp;
+	int		*num_arr;
 	int		num_count;
 	int		i;
 
 	i = -1;
 	num_count = check_str(str, NULL);
-	num_arr = malloc(sizeof(long) * (num_count));
+	num_arr = malloc(sizeof(int) * (num_count));
+	if (!num_arr)
+		terminate(ERROR_MALLOC, num_arr);
 	while (*str)
-		str = ft_atoi(str, &num_arr[++i]);
-	check_dup_and_over(num_arr, num_count);
+	{
+		str = ft_atoi(str, &temp);
+		if (temp < INT32_MIN || temp > INT32_MAX)
+			terminate(ERROR_OVERFLOW, num_arr);
+		num_arr[++i] = (int)temp;
+	}
+	check_dups(num_arr, num_count);
 	*size = num_count;
 	return (num_arr);
 }
 
-long	*parse_arr(int count, char **value, int *size)
+int	*parse_arr(int count, char **value, int *size)
 {
-	long	*num_arr;
+	long	temp;
+	int		*num_arr;
 	int		i;
 
 	i = -1;
-	num_arr = malloc(sizeof(long) * (count));
+	num_arr = malloc(sizeof(int) * (count));
+	if (!num_arr)
+		terminate(ERROR_MALLOC, num_arr);
 	while (++i < count)
 	{
 		if (check_str(*value, num_arr) > 1)
 			terminate(ERROR_MANY_ARGS, num_arr);
-		ft_atoi(*value, &num_arr[i]);
+		ft_atoi(*value, &temp);
+		if (temp < INT32_MIN || temp > INT32_MAX)
+			terminate(ERROR_OVERFLOW, num_arr);
+		num_arr[i] = (int)temp;
 		value++;
 	}
-	check_dup_and_over(num_arr, count);
+	check_dups(num_arr, count);
 	*size = count;
 	return (num_arr);
 }
@@ -50,7 +64,7 @@ long	*parse_arr(int count, char **value, int *size)
 t_stack	*parser(int count, char **value)
 {
 	t_stack		*stack;
-	long		*num_arr;
+	int			*num_arr;
 	int			size;
 	int			i;
 

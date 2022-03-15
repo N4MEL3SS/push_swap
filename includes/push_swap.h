@@ -22,14 +22,12 @@
 # include "error_msg.h"
 # include "get_next_line.h"
 
-# include "../../btree/btree.h"
-
 # define TRUE 1
 # define FALSE 0
 
 /* validator.c */
-int		check_str(char *str, long *num_arr);
-void	check_dup_and_over(long *num_arr, int size);
+int		check_str(char *str, int *num_arr);
+void	check_dups(int *num_arr, int size);
 
 /* parser.c */
 t_stack	*parser(int count, char **value);

@@ -12,7 +12,7 @@
 
 #include "../includes/push_swap.h"
 
-int	check_str(char *str, long *num_arr)
+int	check_str(char *str, int *num_arr)
 {
 	int		num_count;
 
@@ -32,7 +32,7 @@ int	check_str(char *str, long *num_arr)
 	return (num_count);
 }
 
-void	check_dup_and_over(long *num_arr, int size)
+void	check_dups(int *num_arr, int size)
 {
 	int	i;
 	int	j;
@@ -40,8 +40,6 @@ void	check_dup_and_over(long *num_arr, int size)
 	i = -1;
 	while (++i < size)
 	{
-		if (num_arr[i] < INT32_MIN || num_arr[i] > INT32_MAX)
-			terminate(ERROR_OVERFLOW, num_arr);
 		j = i;
 		while (++j < size)
 			if (num_arr[i] == num_arr[j])
