@@ -20,6 +20,5 @@
 # define ERROR_OVERFLOW		"Error"
 # define ERROR_INPUT		"Error"
 # define ERROR_MANY_ARGS	"Error"
-# define ERROR_NEED_ARGS	"Error"
 
 #endif //ERROR_MSG_H

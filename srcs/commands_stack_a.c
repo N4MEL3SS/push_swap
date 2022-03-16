@@ -12,7 +12,7 @@
 
 #include "../includes/push_swap.h"
 
-int	needs_push_b(t_stack *stack_a)
+int	needs_push(t_stack *stack_a)
 {
 	t_stack_val		*current;
 	int				i;
@@ -28,7 +28,7 @@ int	needs_push_b(t_stack *stack_a)
 	return (FALSE);
 }
 
-int	needs_swap_a(t_stack *stack_a, int (*markup)(t_stack_val *))
+int	needs_swap(t_stack *stack_a, int (*markup)(t_stack_val *))
 {
 	int		pairs;
 
@@ -47,15 +47,19 @@ int	needs_swap_a(t_stack *stack_a, int (*markup)(t_stack_val *))
 void	commands_a(t_stack *stack_a, t_stack *stack_b, t_cmds_head *cmds_head,
 		int (*markup)(t_stack_val *))
 {
-	while (needs_push_b(stack_a))
+	while (needs_push(stack_a))
 	{
-		if (needs_swap_a(stack_a, markup))
+		if (needs_swap(stack_a, markup))
 		{
 			sa(stack_a, cmds_head);
 			stack_a->pairs = markup(stack_a->marker);
 		}
 		else if (stack_a->head->save_in_stack_a == NO)
+		{
 			pb(stack_a, stack_b, cmds_head);
+			if (needs_swap(stack_b, markup))
+				sb(stack_b, cmds_head);
+		}
 		else
 			ra(stack_a, cmds_head);
 	}

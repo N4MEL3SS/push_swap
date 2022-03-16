@@ -61,7 +61,6 @@ void	rrr(t_stack *stack_a, t_stack *stack_b, t_cmds_head *cmds_head);
 void	swap(t_stack *stack, t_stack_val *first, t_stack_val *second);
 void	sa(t_stack *stack_a, t_cmds_head *cmds_head);
 void	sb(t_stack *stack_b, t_cmds_head *cmds_head);
-
 void	ss(t_stack *stack_a, t_stack *stack_b, t_cmds_head *cmds_head);
 
 /* direction.c */
