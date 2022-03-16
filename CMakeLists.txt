@@ -8,7 +8,7 @@ add_executable(push_swap srcs/push_swap.c includes/push_swap.h includes/stack.h 
 		srcs/commands.c srcs/parser.c srcs/validator.c srcs/utils.c includes/error_msg.h srcs/index.c srcs/markup.c
 		srcs/commands_stack_a.c srcs/commands_stack_b.c srcs/print_commands.c includes/commands.h
 		srcs/init.c srcs/push.c srcs/rotate.c srcs/swap.c srcs/reverse_rotate.c srcs/direction.c)
-add_executable(checker srcs/checker.c includes/push_swap.h includes/stack.h srcs/free.c srcs/stack.c
+add_executable(checker srcs/checker_bonus.c includes/push_swap.h includes/stack.h srcs/free.c srcs/stack.c
 		srcs/commands.c srcs/parser.c srcs/validator.c srcs/utils.c includes/error_msg.h srcs/index.c srcs/markup.c
 		srcs/commands_stack_a.c srcs/commands_stack_b.c srcs/print_commands.c includes/commands.h
 		srcs/init.c srcs/push.c srcs/rotate.c srcs/swap.c srcs/reverse_rotate.c srcs/direction.c srcs/get_next_line.c

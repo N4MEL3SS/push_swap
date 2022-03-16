@@ -24,11 +24,11 @@ int	stack_check(t_stack *stack_a)
 	while (--size)
 	{
 		if (current->num > current_next->num)
-			return (1);
+			return (0);
 		current = current->next;
 		current_next = current_next->next;
 	}
-	return (0);
+	return (1);
 }
 
 void	stack_sort(t_stack *stack_a, t_stack *stack_b)
@@ -58,10 +58,10 @@ int	main(int argc, char *argv[])
 			terminate(ERROR_MALLOC, NULL);
 		parser_checker(--argc, ++argv, stack_a);
 		stack_sort(stack_a, stack_b);
-		if (stack_check(stack_a))
-			ft_putendl(COLOR_KO);
-		else
+		if (stack_check(stack_a) && stack_b->size == 0)
 			ft_putendl(COLOR_OK);
+		else
+			ft_putendl(COLOR_KO);
 		free_stack(stack_a);
 		free_stack(stack_b);
 	}

@@ -50,7 +50,7 @@ SRCS_LIST = 	command_choice.c	\
 	utils.c							\
 	validator.c
 SRCS_LIST_PS = push_swap.c
-SRCS_LIST_CH = checker.c
+SRCS_LIST_CH = checker_bonus.c
 SRCS = $(addprefix $(SRCS_DIR), $(SRCS_LIST))
 SRCS_PS = $(addprefix $(SRCS_DIR), $(SRCS_LIST_PS))
 SRCS_CH = $(addprefix $(SRCS_DIR), $(SRCS_LIST_CH))
