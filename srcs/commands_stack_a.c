@@ -55,11 +55,7 @@ void	commands_a(t_stack *stack_a, t_stack *stack_b, t_cmds_head *cmds_head,
 			stack_a->pairs = markup(stack_a->marker);
 		}
 		else if (stack_a->head->save_in_stack_a == NO)
-		{
 			pb(stack_a, stack_b, cmds_head);
-			if (needs_swap(stack_b, markup))
-				sb(stack_b, cmds_head);
-		}
 		else
 			ra(stack_a, cmds_head);
 	}
