@@ -14,7 +14,6 @@
 # define SHIFT_H
 
 # include "stack.h"
-# include "push_swap.h"
 
 # define ROTATE 1
 # define REVERSE_ROTATE 2

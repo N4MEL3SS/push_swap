@@ -32,16 +32,34 @@ t_stack_val	*get_next_min(t_stack *stack)
 	return (min);
 }
 
-void	index_stack(t_stack *stack)
+void	index_stack(t_stack *stack_index)
 {
 	t_stack_val	*current;
 	int			index;
 
 	index = -1;
-	current = get_next_min(stack);
+	current = get_next_min(stack_index);
 	while (current)
 	{
 		current->index = ++index;
-		current = get_next_min(stack);
+		current = get_next_min(stack_index);
+	}
+}
+
+void	index_copy(t_stack *stack_index, t_stack *stack_gt)
+{
+	t_stack_val		*current_index;
+	t_stack_val		*current_gt;
+	int				size;
+
+	size = stack_index->size;
+	current_index = stack_index->head;
+	current_gt = stack_gt->head;
+	while (size)
+	{
+		current_gt->index = current_index->index;
+		current_index = current_index->next;
+		current_gt = current_gt->next;
+		size--;
 	}
 }

@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
-#include <stdio.h>
+#include "../includes/checker.h"
 
 int	stack_check(t_stack *stack_a)
 {
@@ -27,20 +26,15 @@ int	stack_check(t_stack *stack_a)
 		if (current->num > current_next->num)
 			return (1);
 		current = current->next;
+		current_next = current_next->next;
 	}
 	return (0);
 }
 
-int	main(int argc, char *argv[])
+void	stack_sort(t_stack *stack_a, t_stack *stack_b)
 {
-	t_stack			*stack_a;
-	t_stack			*stack_b;
 	char			*line;
 
-	stack_a = parser(--argc, ++argv);
-	if (!stack_a)
-		terminate(ERROR_MALLOC, NULL);
-	stack_b = init_stack();
 	line = get_next_line(0);
 	while (line != NULL)
 	{
@@ -48,13 +42,28 @@ int	main(int argc, char *argv[])
 			terminate(ERROR_INPUT, NULL);
 		line = get_next_line(0);
 	}
-	if (stack_check(stack_a))
-		write(1, "KO", 2);
-	else
-		write(1, "OK", 2);
-	write(1, "\n", 1);
-	free_stack(stack_a);
-	free_stack(stack_b);
 	free(line);
+}
+
+int	main(int argc, char *argv[])
+{
+	t_stack			*stack_a;
+	t_stack			*stack_b;
+
+	if (argc > 1)
+	{
+		stack_a = init_stack();
+		stack_b = init_stack();
+		if (!stack_a || !stack_b)
+			terminate(ERROR_MALLOC, NULL);
+		parser_checker(--argc, ++argv, stack_a);
+		stack_sort(stack_a, stack_b);
+		if (stack_check(stack_a))
+			ft_putendl(COLOR_KO);
+		else
+			ft_putendl(COLOR_OK);
+		free_stack(stack_a);
+		free_stack(stack_b);
+	}
 	return (0);
 }

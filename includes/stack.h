@@ -13,8 +13,6 @@
 #ifndef STACK_H
 # define STACK_H
 
-# include "push_swap.h"
-
 # define YES 1
 # define NO 0
 

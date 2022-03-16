@@ -31,13 +31,14 @@ int	main(int argc, char *argv[])
 
 	if (argc > 1)
 	{
-		stack_index = parser(--argc, ++argv);
+		stack_index = init_stack();
+		stack_gt = init_stack();
+		parser(--argc, ++argv, stack_index, stack_gt);
 		index_stack(stack_index);
+		index_copy(stack_index, stack_gt);
 		markup_stack(stack_index, &markup_index);
 		commands_index = commands(stack_index, &markup_index);
 		free_stack(stack_index);
-		stack_gt = parser(argc, argv);
-		index_stack(stack_gt);
 		markup_stack(stack_gt, &markup_gt);
 		commands_gt = commands(stack_gt, &markup_gt);
 		free_stack(stack_gt);

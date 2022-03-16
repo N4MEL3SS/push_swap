@@ -61,9 +61,8 @@ int	*parse_arr(int count, char **value, int *size)
 	return (num_arr);
 }
 
-t_stack	*parser(int count, char **value)
+void	parser(int count, char **value, t_stack *index, t_stack *gt)
 {
-	t_stack		*stack;
 	int			*num_arr;
 	int			size;
 	int			i;
@@ -73,9 +72,26 @@ t_stack	*parser(int count, char **value)
 		num_arr = parse_str(*value, &size);
 	else
 		num_arr = parse_arr(count, value, &size);
-	stack = init_stack();
+	while (++i < size)
+	{
+		lst_add(index, init_lst((int)num_arr[i], index));
+		lst_add(gt, init_lst((int)num_arr[i], gt));
+	}
+	free(num_arr);
+}
+
+void	parser_checker(int count, char **value, t_stack *stack)
+{
+	int			*num_arr;
+	int			size;
+	int			i;
+
+	i = -1;
+	if (count == 1)
+		num_arr = parse_str(*value, &size);
+	else
+		num_arr = parse_arr(count, value, &size);
 	while (++i < size)
 		lst_add(stack, init_lst((int)num_arr[i], stack));
 	free(num_arr);
-	return (stack);
 }

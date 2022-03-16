@@ -20,7 +20,6 @@
 # include "shift.h"
 # include "commands.h"
 # include "error_msg.h"
-# include "get_next_line.h"
 
 # define TRUE 1
 # define FALSE 0
@@ -30,10 +29,11 @@ int		check_str(char *str, int *num_arr);
 void	check_dups(int *num_arr, int size);
 
 /* parser.c */
-t_stack	*parser(int count, char **value);
+void	parser(int count, char **value, t_stack *index, t_stack *gt);
 
 /* index.c */
 void	index_stack(t_stack *stack);
+void	index_copy(t_stack *stack_index, t_stack *stack_gt);
 
 /* markup.c */
 void	markup_stack(t_stack *stack, int (*markup)(t_stack_val *));
@@ -75,10 +75,8 @@ void	free_command_list(t_cmds_head *cmds_head);
 
 /* utils.c */
 int		ft_max(int a, int b);
+void	ft_putendl(const char *str);
 char	*ft_atoi(char *str, long *num);
 void	terminate(const char *str, void *address);
-
-/* command_choice.c */
-int		command_choice(char *line, t_stack *stack_a, t_stack *stack_b);
 
 #endif //PUSH_SWAP_H

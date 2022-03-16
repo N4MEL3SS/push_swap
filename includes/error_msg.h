@@ -14,7 +14,6 @@
 # define ERROR_MSG_H
 
 # include <unistd.h>
-# include "push_swap.h"
 
 # define ERROR_DUPLICATE	"Error"
 # define ERROR_MALLOC		"Error"

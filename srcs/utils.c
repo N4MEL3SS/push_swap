@@ -57,10 +57,15 @@ size_t	ft_strlen(const char *str)
 	return (len);
 }
 
+void	ft_putendl(const char *str)
+{
+	write(1, str, ft_strlen(str));
+	write(1, "\n", 1);
+}
+
 void	terminate(const char *str, void *address)
 {
 	free(address);
-	write(2, str, ft_strlen(str));
-	write(2, "\n", 1);
+	ft_putendl(str);
 	exit(1);
 }
