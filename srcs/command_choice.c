@@ -52,15 +52,15 @@ void	rx(const char *line, t_stack *stack_a, t_stack *stack_b)
 		rotate(stack_a);
 	else if (*line == 'b')
 		rotate(stack_b);
-	else if (*line == 'r')
+	else if (*line == 'r' && ++line)
 	{
-		if (*line == '\0')
+		if (*line == '\n')
 		{
 			rotate(stack_a);
 			rotate(stack_b);
 		}
 		else
-			rrx(++line, stack_a, stack_b);
+			rrx(line, stack_a, stack_b);
 	}
 }
 
