@@ -15,6 +15,7 @@
 void	push(t_stack *stack, t_stack_val *val)
 {
 	t_stack_val		*tail;
+	t_stack_val		*head;
 
 	if (!stack->head)
 	{
@@ -24,11 +25,12 @@ void	push(t_stack *stack, t_stack_val *val)
 	}
 	else
 	{
-		tail = stack->head->prev;
+		head = stack->head;
+		tail = head->prev;
+		val->next = head;
 		val->prev = tail;
+		head->prev = val;
 		tail->next = val;
-		val->next = stack->head;
-		stack->head->prev = val;
 		stack->head = val;
 	}
 	stack->size++;

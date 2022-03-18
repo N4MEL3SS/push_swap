@@ -37,6 +37,7 @@ void	index_copy(t_stack *stack_index, t_stack *stack_gt);
 
 /* markup.c */
 void	markup_stack(t_stack *stack, int (*markup)(t_stack_val *));
+int		markup_index_simple(t_stack_val *markup_head);
 int		markup_index(t_stack_val *markup_head);
 int		markup_gt(t_stack_val *markup_head);
 

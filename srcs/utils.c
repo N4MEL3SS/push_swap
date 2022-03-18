@@ -67,5 +67,5 @@ void	terminate(const char *str, void *address)
 {
 	free(address);
 	ft_putendl(str);
-	exit(1);
+	exit(EXIT_FAILURE);
 }

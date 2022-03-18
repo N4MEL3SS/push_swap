@@ -28,16 +28,15 @@ int	needs_push(t_stack *stack_a)
 	return (FALSE);
 }
 
-int	needs_swap(t_stack *stack_a, int (*markup)(t_stack_val *))
+int	needs_swap(t_stack *stack_a)
 {
 	int		pairs;
 
 	if (stack_a && stack_a->size >= 2)
 	{
 		swap(stack_a, stack_a->head, stack_a->head->next);
-		pairs = markup(stack_a->marker);
+		pairs = markup_index_simple(stack_a->marker);
 		swap(stack_a, stack_a->head, stack_a->head->next);
-		markup(stack_a->marker);
 		if (pairs > stack_a->pairs)
 			return (TRUE);
 	}
@@ -49,7 +48,7 @@ void	commands_a(t_stack *stack_a, t_stack *stack_b, t_cmds_head *cmds_head,
 {
 	while (needs_push(stack_a))
 	{
-		if (needs_swap(stack_a, markup))
+		if (needs_swap(stack_a))
 		{
 			sa(stack_a, cmds_head);
 			stack_a->pairs = markup(stack_a->marker);
