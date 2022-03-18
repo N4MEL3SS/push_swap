@@ -14,10 +14,11 @@
 
 void	lst_add(t_stack *stack, t_stack_val *lst)
 {
-	t_stack_val	*tail;
-
 	if (stack && lst)
 	{
+		t_stack_val		*tail;
+		t_stack_val		*head;
+
 		if (!stack->head)
 		{
 			stack->head = lst;
@@ -26,11 +27,12 @@ void	lst_add(t_stack *stack, t_stack_val *lst)
 		}
 		else
 		{
-			tail = stack->head->prev;
+			head = stack->head;
+			tail = head->prev;
+			lst->next = head;
 			lst->prev = tail;
+			head->prev = lst;
 			tail->next = lst;
-			lst->next = stack->head;
-			stack->head->prev = lst;
 		}
 		stack->size++;
 	}

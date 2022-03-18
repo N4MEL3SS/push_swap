@@ -74,8 +74,8 @@ void	parser(int count, char **value, t_stack *index, t_stack *gt)
 		num_arr = parse_arr(count, value, &size);
 	while (++i < size)
 	{
-		lst_add(index, init_lst((int)num_arr[i], index));
-		lst_add(gt, init_lst((int)num_arr[i], gt));
+		lst_add(index, init_lst(num_arr[i], index));
+		lst_add(gt, init_lst(num_arr[i], gt));
 	}
 	free(num_arr);
 }
